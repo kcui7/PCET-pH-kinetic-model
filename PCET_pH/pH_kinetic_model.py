@@ -8,7 +8,7 @@ class pHKineticModel(GeneralizedSquareDiagram):
     This class stores all thermodynamics and kinetics parameters in the PCET kinetic model which can be used to 
     calculate the mole fractions, apparent potentials and apparent rate constants as functions of pH (and apparent potential). 
     This class can be used to describe both homogeneous and electrochemical reactions. 
-    For the later, we pre-defined that the potential-dependent rate constants are described by either Butler-Volmer or Marcus-Gerischer model.
+    For the later, only Butler-Volmer or Marcus-Gerischer kinetic models are supported. 
     This class also enables the use of potential-dependent and independent thermodynamics paramters for electrochemical systems
 
     Input description and data type:
