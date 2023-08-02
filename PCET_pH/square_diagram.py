@@ -3,8 +3,7 @@ import numpy as np
 class GeneralizedSquareDiagram(object):
     """
     This class stores all thermodynamic parameters which will be used to calculate the mole fractions at given pH. 
-    This class also enables the use of potential-dependent parameters by
-    using callable functions as the K or E_ET1 parameters. 
+    This class also enables the use of potential-dependent parameters by using callable functions as the K or E_ET1 parameters. 
 
     Input description and data type:
     KaOx (float or function): acid dissociation equilibrium constant of the oxidized species 
