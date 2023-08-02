@@ -97,3 +97,41 @@ system.set_parameters(KaRed=1e-10,
 ```
 
 ### Calculation
+With a `pHKineticModel` object created, the mole fractions, apparent potentials and apparent rate constants as functions of pH (and electrode potential) can be calculated by simply calling the corresponding methods. 
+
+#### Calculate the mole fractions:
+```python
+system.calc_mole_fraction(pH) # for systems with potential-independent equilibrium constants
+system.calc_mole_fraction(pH, E) # for systems with potential-dependent equilibrium constants
+```
+By default, this method returns the mole fractions of all species, with the order of: OxH, Ox, Ox...H3O+, RedH, Red, RedH...OH-. The user can specify the mole fraction of which species to be calculated using:
+```python
+system.calc_mole_fraction(pH, species='OxH')
+```
+Possible choices of the `species` keyword are: `'OxH'`, `'Ox'`, `'OxH3O'`, `'RedH'`, `'Red'`, `'RedHOH'`
+
+#### Calculate the apparent potential:
+```python
+system.calc_apparent_potential(pH)
+```
+This method returns the apparent potential. It works for both systems with potential-independent or potential-dependent equilibrium constants. 
+
+#### Calculate the apparent rate constant:
+```python
+system.calc_apparent_rate_constant(pH) # for homogeneous systems
+system.calc_apparent_rate_constant(pH, E) # for electrochemical systems
+```
+This method returns the total apparent rate constant.
+
+#### Decompose the apparent rate constant:
+```python
+system.calc_apparent_rate_constant(pH, decomposition=True) # for homogeneous systems
+system.calc_apparent_rate_constant(pH, E, decomposition=True) # for electrochemical systems
+```
+This method returns the total and decomposed rate constants with the order of total, ET1, ET2, EPT1, EPT2. 
+
+#### Calculate the apparent standard rate constant:
+```python
+system.calc_apparent_standard_rate_constant(pH)
+```
+This method only works for electrochemical systems. It returns the apparent standard rate constant. 
