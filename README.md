@@ -40,12 +40,12 @@ The requiered parameters are listed below:
 
 5. `E_ET1` (float or function): redox potential of the ET1 channel (in Volts).
     
-6. `k_ET1`/`k_ET2`/`k_EPT1`/`k_EPT2` (float or tuple): rate constants (and other parameters) of the ET1/ET2/EPT1/EPT2 channel
+6. `k_ET1`/`k_ET2`/`k_EPT1`/`k_EPT2` (float or tuple): rate constants (and other parameters) of the ET1/ET2/EPT1/EPT2 channel. 
 This class can be used to describe both homogeneous and electrochemical reactions. For the later, only Butler-Volmer or Marcus-Gerischer kinetic models are supported. The input format of these `k` parameters varies with the kinetic model choice. 
 ```
   if reaction = 'homogeneous': k = rate constant (float)
 
-  if reaction = 'Butler-Volme': k = (standard rate constant, cathodic charge transfer coefficient)
+  if reaction = 'Butler-Volmer': k = (standard rate constant, cathodic charge transfer coefficient)
 
   if reaction = 'Marcus-Gerischer': k = (maximum rate constant, reorganization energy (in eV))
 ```                                               
@@ -53,13 +53,13 @@ This class can be used to describe both homogeneous and electrochemical reaction
 
 8. `reaction` (string): choose between `'reduction'` and `'oxidation'`
 
-These parameters can be summarized in the generalized square diagram of PCET. Detailed definitions can be found in Ref. 1. 
+These parameters can be summarized in the generalized square diagram of PCET. Detailed definitions are provided in Ref. 1. 
 <div align="center">
   <img src="./PCET_diagram.jpg" alt="PCET" width="600">
 </div>
 
 #### Potential-dependent equilibrium constants
-This class also enables the use of potential-dependent equilibrium constants for electrochemical systems. This can be done by setting the `K` parameters to be user-defined functions. For example: 
+The `pHKineticModel` class also enables the use of potential-dependent equilibrium constants for electrochemical systems. This can be done by setting the `K` parameters to be user-defined functions. For example: 
 
 ```python
 # define the potential-dependent thermodynamics parameters
@@ -84,5 +84,16 @@ system = pHKineticModel(KaOx=KaOx_E,
                         )
 ```
 
+`NOTE`: When using potential-dependent equilibrium constants, KaOx and E_ET1 must be both potential-dependent or potential-independent to ensure the standard free energy of the overall reaction: Ox + H+ + e- <==> RedH is potential-independent. On the other hand, for the other legs, say if KaRed is set to be potential-dependent, the code will automatically make E_ET2 also potential-dependent. 
 
-### Examples
+### Change parameters after initialization
+After initialization, the parameters stored in the `pHKineticModel` object can be changed by calling the `set_parameters` method. The syntax is the same as initialization:  
+
+```python
+system.set_parameters(KaRed=1e-10,  
+                      k_ET2=(12,0.5), 
+                      reaction='oxidation', 
+                      )
+```
+
+### Calculation
