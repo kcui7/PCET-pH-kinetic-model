@@ -9,7 +9,7 @@ To use the kinetic model, simply download the code and add it to your `$PYTHONPA
 ### Initialization
 
 #### General consideration
-To start a calculation, create a `pHKineticModel` object and input the parameters: 
+To start a calculation, create a `pHKineticModel` object and input relevant parameters: 
 ```python
 from PCET_pH import pHKineticModel
 
@@ -28,7 +28,7 @@ system = pHKineticModel(KaOx=1e-3,
 ```
 The `pHKineticModel` object stores all thermodyanmics and kinetics paramaters in the PCET kinetic model, which will be used to calculate the mole fractions, apparent potentials and apparent rate constants as functions of pH (and electrode potential). 
 
-The requiered parameters are listed below:
+The required parameters are listed below:
 
 1. `KaOx` (float or function): acid dissociation equilibrium constant of the oxidized species.
 
@@ -38,7 +38,7 @@ The requiered parameters are listed below:
 
 4. `K2` (float or function): association equilibrium constant of the reduced species with OH-.
 
-5. `E_ET1` (float or function): redox potential of the ET1 channel (in Volts).
+5. `E_ET1` (float or function): redox potential of the ET1 channel (in Volts). Note that the other redox potentials will be calculated on-the-fly based on `E_ET1` and the equilibrium constants. 
     
 6. `k_ET1`/`k_ET2`/`k_EPT1`/`k_EPT2` (float or tuple): rate constants (and other parameters) of the ET1/ET2/EPT1/EPT2 channel. 
 This class can be used to describe both homogeneous and electrochemical reactions. For the later, only Butler-Volmer or Marcus-Gerischer kinetic models are supported. The input format of these `k` parameters varies with the kinetic model choice. 
@@ -47,7 +47,7 @@ This class can be used to describe both homogeneous and electrochemical reaction
 
   if reaction = 'Butler-Volmer': k = (standard rate constant, cathodic charge transfer coefficient)
 
-  if reaction = 'Marcus-Gerischer': k = (maximum rate constant, reorganization energy (in eV))
+  if reaction = 'Marcus-Gerischer': k = (maximum rate constant, reorganization energy in eV)
 ```                                               
 7. `kinetics` (string): choose among `'homogeneous'`, `'Butler-Volmer'` or `'BV'`, and `'Marcus-Gerischer'` or `'MG'`
 
