@@ -2,8 +2,7 @@ import numpy as np
 
 class GeneralizedSquareDiagram(object):
     """
-    This class greates an instance of the generalized square diagram, 
-    defines all THERMODYNAMIC paramaters and calculates the mole fractions at given pH. 
+    This class stores all thermodynamic paramaters which will be used to calculate the mole fractions at given pH. 
     This class also enables the use of potential-dependent paramters by
     using callable functions as the K or E_ET1 parameters. 
 
