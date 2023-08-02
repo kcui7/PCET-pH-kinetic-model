@@ -38,7 +38,7 @@ class GeneralizedSquareDiagram(object):
         # the code will automatically make E_ET2 also potential-dependent. 
 
         if not (callable(self.parameters['E_ET1']) == callable(self.parameters['KaOx'])): 
-            raise RuntimeError("KaOx and E_ET1 must be both potential-dependent to ensure the free energy of the overall reaction: Ox + H+ + e- <==> RedH is potential-independent. ")
+            raise RuntimeError("KaOx and E_ET1 must be both potential-dependent to ensure the standard free energy of the overall reaction: Ox + H+ + e- <==> RedH is potential-independent. ")
 
 
         # detect if any functions are used as parameters, if so, enable potential-dependent parameters
