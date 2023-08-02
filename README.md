@@ -104,7 +104,7 @@ With a `pHKineticModel` object created, the mole fractions, apparent potential a
 system.calc_mole_fraction(pH) # for systems with potential-independent equilibrium constants
 system.calc_mole_fraction(pH, E) # for systems with potential-dependent equilibrium constants
 ```
-By default, this method returns the mole fractions of all species, with the order of: OxH, Ox, Ox...H3O+, RedH, Red, RedH...OH-. The user can specify the mole fraction of which species to be calculated using:
+By default, this method returns the mole fractions of all species, with the order of: OxH, Ox, Ox...H3O+, RedH, Red, RedH...OH-. The user can also specify one species to calculate its mole fraction using:
 ```python
 system.calc_mole_fraction(pH, species='OxH')
 ```
@@ -135,3 +135,7 @@ This method returns the total and decomposed rate constants with the order of to
 system.calc_apparent_standard_rate_constant(pH)
 ```
 This method only works for electrochemical systems. It returns the apparent standard rate constant. 
+
+### Citation
+If you find this kinetic model helpful, please cite the following paper: 
+1. Cui, K.; Soudackov, A. V.; Kessinger, M. C.; Xu, J.; Meyer, G. J.; Hammes-Schiffer, S. General Kinetic Model for pH Dependence of Proton-Coupled Electron Transfer: Application to Electrochemical Water Oxidation System. *J. Am. Chem. Soc.* **2023**, (In Press)
