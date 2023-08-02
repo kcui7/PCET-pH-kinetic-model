@@ -5,8 +5,8 @@ from .square_diagram import GeneralizedSquareDiagram
 
 class pHKineticModel(GeneralizedSquareDiagram):
     """
-    This class defines all thermodyanmics and kinetics paramaters in the PCET kinetic model
-    and calculates the mole fractions, apparent potentials and apparent rate constants as functions of pH. 
+    This class stores all thermodynamics and kinetics parameters in the PCET kinetic model which can be used to 
+    calculate the mole fractions, apparent potentials and apparent rate constants as functions of pH (and apparent potential). 
     This class can be used to describe both homogeneous and electrochemical reactions. 
     For the later, we pre-defined that the potential-dependent rate constants are described by either Butler-Volmer or Marcus-Gerischer model.
     This class also enables the use of potential-dependent and independent thermodynamics paramters for electrochemical systems
