@@ -26,7 +26,7 @@ system = pHKineticModel(KaOx=1e-3,
                         kinetics='homogeneous',
                         )
 ```
-The `pHKineticModel` object stores all thermodyanmics and kinetics paramaters in the PCET kinetic model, which will be used to calculate the mole fractions, apparent potentials and apparent rate constants as functions of pH (and electrode potential). 
+The `pHKineticModel` object stores all thermodyanmics and kinetics paramaters in the PCET kinetic model, which will be used to calculate the mole fractions, apparent potential and apparent rate constants as functions of pH (and electrode potential). 
 
 The required parameters are listed below:
 
@@ -97,7 +97,7 @@ system.set_parameters(KaRed=1e-10,
 ```
 
 ### Calculation
-With a `pHKineticModel` object created, the mole fractions, apparent potentials and apparent rate constants as functions of pH (and electrode potential) can be calculated by simply calling the corresponding methods. 
+With a `pHKineticModel` object created, the mole fractions, apparent potential and apparent rate constants as functions of pH (and electrode potential) can be calculated by simply calling the corresponding methods. 
 
 #### Calculate the mole fractions:
 ```python
