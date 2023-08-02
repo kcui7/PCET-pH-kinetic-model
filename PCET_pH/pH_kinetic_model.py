@@ -22,8 +22,8 @@ class pHKineticModel(GeneralizedSquareDiagram):
     
     k_ET1/k_ET2/k_EPT1/k_EPT2 (float or tuple): rate constants (and other parameters) of the ET1/ET2/EPT1/EPT2 channel
                                                 if reaction = 'homogeneous': k = rate constant (float)
-                                                if reaction = 'BV': k = (rate constant, cathodic charge transfer coefficient)
-                                                if reaction = 'MG': k = (rate constant, reorganization energy (in eV))
+                                                if reaction = 'BV': k = (standard rate constant, cathodic charge transfer coefficient)
+                                                if reaction = 'MG': k = (maximum rate constant, reorganization energy (in eV))
     kinetics (string): choose among 'homogeneous', 'Butler-Volmer' or 'BV', and 'Marcus-Gerischer' or 'MG'
     reaction (string): choose between 'reduction' and 'oxidation'
     """
