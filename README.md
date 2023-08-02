@@ -2,8 +2,7 @@
 The pH dependence of proton-coupled electron transfer (PCET) reactions is a powerful probe for elucidating their fundamental mechanisms. The PCET-pH-kinetic-model codes a general, multi-channel kinetic model for describing the pH dependence of PCET reactions that can be applied to both homogeneous and electrochemical reactions.  
 
 ## Installation 
-To use the kinetic model.
-Simply download the code and add it to your `$PYTHONPATH` variable.
+To use the kinetic model, simply download the code and add it to your `$PYTHONPATH` variable.
 
 ## Documentation
 
