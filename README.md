@@ -136,6 +136,6 @@ system.calc_apparent_standard_rate_constant(pH)
 ```
 This method only works for electrochemical systems. It returns the apparent standard rate constant. 
 
-### Citation
+## Citation
 If you find this kinetic model helpful, please cite the following paper: 
 1. Cui, K.; Soudackov, A. V.; Kessinger, M. C.; Xu, J.; Meyer, G. J.; Hammes-Schiffer, S. General Kinetic Model for pH Dependence of Proton-Coupled Electron Transfer: Application to Electrochemical Water Oxidation System. *J. Am. Chem. Soc.* **2023**, (In Press)
