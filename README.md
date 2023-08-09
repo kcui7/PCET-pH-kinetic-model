@@ -138,4 +138,4 @@ This method only works for electrochemical systems. It returns the apparent stan
 
 ## Citation
 If you find this kinetic model helpful, please cite the following paper: 
-1. Cui, K.; Soudackov, A. V.; Kessinger, M. C.; Xu, J.; Meyer, G. J.; Hammes-Schiffer, S. General Kinetic Model for pH Dependence of Proton-Coupled Electron Transfer: Application to Electrochemical Water Oxidation System. *J. Am. Chem. Soc.* **2023**, (In Press)
+1. Cui, K.; Soudackov, A. V.; Kessinger, M. C.; Xu, J.; Meyer, G. J.; Hammes-Schiffer, S. General Kinetic Model for pH Dependence of Proton-Coupled Electron Transfer: Application to Electrochemical Water Oxidation System. *J. Am. Chem. Soc.* **2023**, (In Press) DOI:[10.1021/jacs.3c05535]
