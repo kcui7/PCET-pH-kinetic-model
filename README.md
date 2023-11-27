@@ -136,6 +136,55 @@ system.calc_apparent_standard_rate_constant(pH)
 ```
 This method only works for electrochemical systems. It returns the apparent standard rate constant. 
 
+## Extension
+
+In principle, the kinetic model described in Ref. 1 can be applied to any systems with various number of channels. 
+Adding or removing of channels and forms will lead to modification of the underlying equations. 
+This current code explicitly uses the equations derived from the four-channel channel model shown in the figure above. Therefore, inclusion of additional channels and forms requires modification to the code. 
+
+The module `PCET_pH_Trp` contains modified code that is tailored to describe the oxidation of Tryptophan-derivatives, a homogeneous reaction. The usage of this modified code is the same as the main branch code in the `PCET_pH` module, but the input parameters are different, and some features (like the potential-dependence) are disabled. 
+
+To start a calculation, create a `pHKineticModelTrp` object and input relevant parameters: 
+```python
+from PCET_pH_Trp import pHKineticModelTrp
+
+system = pHKineticModelTrp(KaNH3=10**(-7.5), 
+                           KOH_NH3=7e4, 
+                           KOH_NH2=4.2e2, 
+                           k_ET1_NH3=3.55e5, 
+                           k_EPT1_NH3=3.55e5, 
+                           k_EPT2_NH3=4e9, 
+                           k_ET1_NH2=3.55e5, 
+                           k_EPT1_NH2=3.55e5, 
+                           k_EPT2_NH2=4e8, 
+                           )
+```
+
+The required parameters are:
+
+1. `KaNH3` (float): acid dissociation equilibrium constant of the NH3+ group 
+2. `KOH_NH3` (float): association equilibrium constant of the reduced species Trp(NH3+)NH with OH- (K_OH in the diagram)
+3. `KOH_NH2` (float): association equilibrium constant of the reduced species Trp(NH2)NH with OH- (K’_OH in the diagram)
+4. `k_ET1_NH3`/`k_EPT1_NH3`/`k_EPT2_NH3`/`k_ET1_NH2`/`k_EPT1_NH2`/`k_EPT2_NH2` (float): rate constants of the ET1/EPT1/EPT2/ET1'/EPT1'/EPT2' channels
+
+These parameters can be summarized in the following diagram. See Ref. 2 for more details. 
+
+<div align="center">
+  <img src="./PCET_diagram_Trp.jpg" alt="PCET_”Trp width=“800">
+</div>
+
+Due to the complexity of this system, the potential-dependence feature is disabled. 
+In addition, we focus on the OXIDATION reaction for this system, so the mole fractions of oxidized species and the apparent potential will NOT be calculated. 
+
+The implemented methods are:
+```python
+system.calc_mole_fraction(pH)
+system.calc_mole_fraction(pH, species=‘TrpNH_NH3’)
+system.calc_apparent_rate_constant(pH)
+system.calc_apparent_rate_constant(pH, decomposition=True)
+```
+
 ## Citation
-If you find this kinetic model helpful, please cite the following paper: 
+If you find this kinetic model helpful, please cite the following papers: 
 1. Cui, K.; Soudackov, A. V.; Kessinger, M. C.; Xu, J.; Meyer, G. J.; Hammes-Schiffer, S. General Kinetic Model for pH Dependence of Proton-Coupled Electron Transfer: Application to an Electrochemical Water Oxidation System. *J. Am. Chem. Soc.* **2023**, *145*, 19321–19332 DOI:[10.1021/jacs.3c05535](https://doi.org/10.1021/jacs.3c05535)
+2. Cui, K.; Soudackov, A. V.; Hammes-Schiffer, S. Modeling the weak pH Dependence of Proton-Coupled Electron Transfer for Tryptophan Derivatives, *J. Phys. Chem. Lett.* In Press. DOI:[10.1021/acs.jpclett.3c02282](https://doi.org/10.1021/acs.jpclett.3c02282)
