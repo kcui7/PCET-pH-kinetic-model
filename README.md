@@ -142,7 +142,7 @@ In principle, the kinetic model described in Ref. 1 can be applied to any system
 Adding or removing of channels and forms will lead to modification of the underlying equations. 
 This current code explicitly uses the equations derived from the four-channel channel model shown in the figure above. Therefore, inclusion of additional channels and forms requires modification to the code. 
 
-The module `PCET_pH_Trp` contains modified code that is tailored to describe the oxidation of Tryptophan-derivatives, a homogeneous reaction. The usage of this modified code is the same as the main branch code in the `PCET_pH` module, but the input parameters are different, and some features (like the potential-dependence) are disabled. 
+The module `PCET_pH_Trp` contains modified code that is tailored to describe the oxidation of Tryptophan-derivatives, a homogeneous reaction. The usage of this modified code is the same as the code in the `PCET_pH` module, but the input parameters are different, and some features (like the potential-dependence) are disabled. 
 
 To start a calculation, create a `pHKineticModelTrp` object and input relevant parameters: 
 ```python
@@ -170,7 +170,7 @@ The required parameters are:
 These parameters can be summarized in the following diagram. See Ref. 2 for more details. 
 
 <div align="center">
-  <img src="./PCET_diagram_Trp.jpg" alt="PCET_”Trp width=“700">
+  <img src="./PCET_diagram_Trp.jpg" alt="PCET_”Trp width=“500">
 </div>
 
 Due to the complexity of this system, the potential-dependence feature is disabled. 
