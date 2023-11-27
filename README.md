@@ -55,7 +55,7 @@ This class can be used to describe both homogeneous and electrochemical reaction
 
 These parameters can be summarized in the generalized square diagram of PCET. Detailed definitions are provided in Ref. 1. 
 <div align="center">
-  <img src="./PCET_diagram.jpg" alt="PCET" width="600">
+  <img src="./PCET_diagram.jpg" alt="PCET" width="500">
 </div>
 
 #### Potential-dependent equilibrium constants
@@ -170,7 +170,7 @@ The required parameters are:
 These parameters can be summarized in the following diagram. See Ref. 2 for more details. 
 
 <div align="center">
-  <img src="./PCET_diagram_Trp.jpg" alt="PCET_”Trp width=“800">
+  <img src="./PCET_diagram_Trp.jpg" alt="PCET_”Trp width=“700">
 </div>
 
 Due to the complexity of this system, the potential-dependence feature is disabled. 
