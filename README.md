@@ -186,5 +186,5 @@ system.calc_apparent_rate_constant(pH, decomposition=True)
 
 ## Citation
 If you find this kinetic model helpful, please cite the following papers: 
-1. Cui, K.; Soudackov, A. V.; Kessinger, M. C.; Xu, J.; Meyer, G. J.; Hammes-Schiffer, S. General Kinetic Model for pH Dependence of Proton-Coupled Electron Transfer: Application to an Electrochemical Water Oxidation System. *J. Am. Chem. Soc.* **2023**, *145*, 19321–19332 DOI:[10.1021/jacs.3c05535](https://doi.org/10.1021/jacs.3c05535)
-2. Cui, K.; Soudackov, A. V.; Hammes-Schiffer, S. Modeling the weak pH Dependence of Proton-Coupled Electron Transfer for Tryptophan Derivatives, *J. Phys. Chem. Lett.* In Press. DOI:[10.1021/acs.jpclett.3c02282](https://doi.org/10.1021/acs.jpclett.3c02282)
+1. Cui, K.; Soudackov, A. V.; Kessinger, M. C.; Xu, J.; Meyer, G. J.; Hammes-Schiffer, S. General Kinetic Model for pH Dependence of Proton-Coupled Electron Transfer: Application to an Electrochemical Water Oxidation System. *J. Am. Chem. Soc.* **2023**, *145*, 19321–19332. DOI:[10.1021/jacs.3c05535](https://doi.org/10.1021/jacs.3c05535)
+2. Cui, K.; Soudackov, A. V.; Hammes-Schiffer, S. Modeling the weak pH Dependence of Proton-Coupled Electron Transfer for Tryptophan Derivatives, *J. Phys. Chem. Lett.* **2023**, *14*, 10980-10987. DOI:[10.1021/acs.jpclett.3c02282](https://doi.org/10.1021/acs.jpclett.3c02282)
